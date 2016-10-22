@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,11 +31,24 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tour_search.png" translatesAutoresizingMaskIntoConstraints="NO" id="PQm-lo-fb7">
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Lux" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xM6-5K-WE2">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="anH-ke-uAk"/>
+                                    <constraint firstAttribute="width" constant="56" id="drk-44-8Hi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97647058819999999" green="0.56862745100000001" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
+                            <constraint firstItem="uM8-Ta-0kS" firstAttribute="top" secondItem="xM6-5K-WE2" secondAttribute="bottom" constant="140" id="2p0-dX-RqZ"/>
+                            <constraint firstItem="xM6-5K-WE2" firstAttribute="top" secondItem="PQm-lo-fb7" secondAttribute="bottom" constant="14" id="3fc-Nd-mwA"/>
                             <constraint firstItem="uM8-Ta-0kS" firstAttribute="top" secondItem="PQm-lo-fb7" secondAttribute="bottom" constant="175" id="6z7-SV-rJV"/>
                             <constraint firstAttribute="trailing" secondItem="PQm-lo-fb7" secondAttribute="trailing" id="9wl-vC-Beh"/>
+                            <constraint firstItem="xM6-5K-WE2" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="272" id="MtW-DM-YXz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xM6-5K-WE2" secondAttribute="trailing" constant="15" id="TPZ-1c-fuJ"/>
                             <constraint firstItem="PQm-lo-fb7" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="UKL-eI-xEt"/>
                             <constraint firstItem="18O-Eh-W5B" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="dg2-bV-UIM"/>
                             <constraint firstAttribute="trailing" secondItem="18O-Eh-W5B" secondAttribute="trailing" id="gGb-hH-5Kj"/>

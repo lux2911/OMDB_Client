@@ -42,7 +42,7 @@
 	self.tableView.dataSource=self;
 	
 	self.tableView.rowHeight=70;
-	self.tableView.tableHeaderView=nil; //[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10)];
+	self.tableView.tableHeaderView=nil;
 	self.tableView.tableFooterView=[self tableFooter];
 	
 }
@@ -57,8 +57,8 @@
 	UIView* aView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,286)];
 	aView.backgroundColor=[UIColor darkTextColor];
 	
-	UIImageView* iv=[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 286)];
-	[iv setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin ];
+	UIImageView* iv=[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 286)];
+	[iv setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
 	iv.contentMode=UIViewContentModeScaleAspectFit;
 	iv.image=[UIImage imageNamed:@"tour_search"];
 	
@@ -217,7 +217,6 @@
 {
 	 if ([segue.identifier isEqualToString:@"MovieDetails"])
 	 {
-		// MovieDetailsViewController* md=(MovieDetailsViewController*) segue.destinationViewController;
 		 
 		 MovieDetailsViewControllerSW* md=(MovieDetailsViewControllerSW*) segue.destinationViewController;
 		 
@@ -225,10 +224,7 @@
 		 
 		 Movie* aMovie = self.movies[idx.row];
 		 md.movie = aMovie;
-		 
-		 //md.imdbID=aMovie.imdbID;
-		// md.movieTitle=aMovie.Title;
-		
+			
 		 MovieCell* aCell=(MovieCell*)[self.tableView cellForRowAtIndexPath:idx];
 		 
 		 md.movieImg=aCell.imgMovie.image;

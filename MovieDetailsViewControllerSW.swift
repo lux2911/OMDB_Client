@@ -22,9 +22,6 @@ import UIKit
 	@IBOutlet weak var lblStars: UILabel!
 	
 	var movie : Movie!
-	
-	//var imdbID : String!
-	//var movieTitle : String!
 	var movieImg : UIImage!
 	
 	let urlSession : URLSession = URLSession.init(configuration: URLSessionConfiguration.default)

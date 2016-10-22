@@ -15,10 +15,12 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
 	[UINavigationBar appearance].barTintColor=[UIColor lightGrayColor];
-	
+		
+	[UITextField appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]].backgroundColor=UIColorFromRGB(0xc9c9ca);
 	[NSThread sleepForTimeInterval:2.0];
 	
 	[application setStatusBarHidden:NO withAnimation:NO];

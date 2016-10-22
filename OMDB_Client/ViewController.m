@@ -42,10 +42,33 @@
 	self.tableView.dataSource=self;
 	
 	self.tableView.rowHeight=70;
-	self.tableView.tableHeaderView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10)];
-	self.tableView.tableFooterView=[UIView new];
+	self.tableView.tableHeaderView=nil; //[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10)];
+	self.tableView.tableFooterView=[self tableFooter];
 	
 }
+
+
+-(UIView*)tableFooter
+{
+	
+	if ([self.movies count]>0)
+		return [UIView new];
+	
+	UIView* aView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,286)];
+	aView.backgroundColor=[UIColor darkTextColor];
+	
+	UIImageView* iv=[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 286)];
+	[iv setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin ];
+	iv.contentMode=UIViewContentModeScaleAspectFit;
+	iv.image=[UIImage imageNamed:@"tour_search"];
+	
+	
+	[aView addSubview:iv];
+	
+	
+	return aView;
+}
+
 
 
 #pragma mark - UITableViewDataSource
@@ -107,6 +130,8 @@
 	{
 		[self.movies removeAllObjects];
 		self.totalResults=0;
+		self.tableView.tableFooterView=[self tableFooter];
+		
 		[self.tableView reloadData];
 		
 		self.searchText=searchBar.text;
@@ -125,7 +150,7 @@
 	
 	NSURL* aURL=[NSURL URLWithString:[NSString stringWithFormat:kBaseURL,text,page]];
 	
-    self.dataTask=[self.urlSession dataTaskWithURL:aURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+	self.dataTask=[self.urlSession dataTaskWithURL:aURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 		
 		self.dataTask=nil;
 		
@@ -134,36 +159,38 @@
 			NSError * jsonErr;
 			NSDictionary* dict=	[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonErr];
 			
-			 if (!jsonErr)
-			 {
-				 self.totalResults=[dict[@"totalResults"] intValue];
-				 
-				 NSArray* arr = dict[@"Search"];
-				 
-				 for (NSDictionary* aMovie in arr) {
-					 
-					 Movie* newMovie=[Movie new];
-					 
-					 for (NSString* aKey in aMovie)
-					 {						 
-						 if ([newMovie respondsToSelector:NSSelectorFromString(aKey)])
-							 [newMovie setValue:aMovie[aKey] forKey:aKey];
-					 }
-					 
-					 [self.movies addObject:newMovie];
-					 
-				 }
-				 
-				 dispatch_async(dispatch_get_main_queue(), ^{
-					 [self dismissHUDAnimated:YES];
-					 [self.tableView reloadData];
-				 });
-				 
-			 }
+			if (!jsonErr)
+			{
+				self.totalResults=[dict[@"totalResults"] intValue];
+				
+				NSArray* arr = dict[@"Search"];
+				
+				for (NSDictionary* aMovie in arr) {
+					
+					Movie* newMovie=[Movie new];
+					
+					for (NSString* aKey in aMovie)
+					{
+						if ([newMovie respondsToSelector:NSSelectorFromString(aKey)])
+							[newMovie setValue:aMovie[aKey] forKey:aKey];
+					}
+					
+					[self.movies addObject:newMovie];
+					
+				}
+				
+				dispatch_async(dispatch_get_main_queue(), ^{
+					[self dismissHUDAnimated:YES];
+					self.tableView.tableFooterView=[self tableFooter];
+					[self.tableView reloadData];
+				});
+				
+			}
 			else
 			{
 				dispatch_async(dispatch_get_main_queue(), ^{
 					[self dismissHUDAnimated:YES];
+					self.tableView.tableFooterView=[self tableFooter];
 					
 				});
 			}
@@ -173,16 +200,18 @@
 		{
 			dispatch_async(dispatch_get_main_queue(), ^{
 				[self dismissHUDAnimated:YES];
+				self.tableView.tableFooterView=[self tableFooter];
 				
 			});
 		}
-
+		
 		
 	}];
 	
 	[self.dataTask resume];
 	
 }
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

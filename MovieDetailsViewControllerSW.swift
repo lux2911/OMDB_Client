@@ -32,37 +32,22 @@ import UIKit
 	
 	
 	override func viewDidLoad() {
-        super.viewDidLoad()
+		super.viewDidLoad()
 		
 		imgMovie.image=movieImg
 		
-		self.lblTitle.text=movieTitle + " #"
-		
-		//self.lblTitle.sizeToFit()
-		
-		let ns = self.lblTitle.text as NSString?
-		let aRange = ns?.range(of: "#")
-		
-		
-		 var rect = self.lblTitle.boundingRectForCharacterRange(range: aRange!)
-		
-		 rect = self.view.convert(rect!, from: self.lblTitle)
-		
-		 let ai = UIActivityIndicatorView.init(frame: rect!)
-		
-		 ai.startAnimating()
-		
-		 self.view.addSubview(ai)
-		
-		
+		self.lblTitle.text=movieTitle
 		
 		
 		self.loadMovieData()
-
+		
 	}
 
 	
 	func loadMovieData() {
+		
+		
+		self.showSpinnerInWindow()
 		
 		let url = URL.init(string: String.init(format: baseURL, imdbID))
 		
@@ -74,9 +59,9 @@ import UIKit
 				
 				do
 				{
-				  let dict : Dictionary =  try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String,AnyObject>
-				  let details  = MovieDetails.init()
-	
+					let dict : Dictionary =  try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String,AnyObject>
+					let details  = MovieDetails.init()
+					
 					for (key,value) in dict
 					{
 						
@@ -89,17 +74,25 @@ import UIKit
 					}
 					
 					DispatchQueue.main.async {
-						
+						self.dismissHUD(animated: true)
 						self.refreshMovieUI(details: details)
 					}
 					
 				}
 				catch
 				{
-					
+					DispatchQueue.main.async {
+						self.dismissHUD(animated: true)
+					}
 				}
 				
 				
+			}
+			else
+			{
+				DispatchQueue.main.async {
+					self.dismissHUD(animated: true)
+				}
 			}
 			
 		}
@@ -107,6 +100,7 @@ import UIKit
 		dataTask.resume()
 		
 	}
+	
 	
 	
 	func refreshMovieUI(details : MovieDetails)

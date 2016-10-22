@@ -19,6 +19,11 @@
 	
 	[UINavigationBar appearance].barTintColor=[UIColor lightGrayColor];
 	
+	[NSThread sleepForTimeInterval:2.0];
+	
+	[application setStatusBarHidden:NO withAnimation:NO];
+	
+	
 	return YES;
 }
 

@@ -18,7 +18,6 @@
 		D519B0371DBAB51B002CBC8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D519B0351DBAB51B002CBC8D /* LaunchScreen.storyboard */; };
 		D519B0411DBAC18B002CBC8D /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B0401DBAC18B002CBC8D /* Movie.m */; };
 		D519B0451DBAEB63002CBC8D /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B0441DBAEB63002CBC8D /* MovieCell.m */; };
-		D519B0481DBB0B70002CBC8D /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B0471DBB0B70002CBC8D /* MovieDetailsViewController.m */; };
 		D519B04C1DBB0F30002CBC8D /* UIViewController+ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B04B1DBB0F30002CBC8D /* UIViewController+ProgressHUD.m */; };
 		D519B04F1DBB102F002CBC8D /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B04E1DBB102F002CBC8D /* UIImage+animatedGIF.m */; };
 		D519B0521DBB11A0002CBC8D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B0511DBB11A0002CBC8D /* MBProgressHUD.m */; };
@@ -46,8 +45,6 @@
 		D519B0401DBAC18B002CBC8D /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		D519B0431DBAEB63002CBC8D /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		D519B0441DBAEB63002CBC8D /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
-		D519B0461DBB0B70002CBC8D /* MovieDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailsViewController.h; sourceTree = "<group>"; };
-		D519B0471DBB0B70002CBC8D /* MovieDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
 		D519B04A1DBB0F30002CBC8D /* UIViewController+ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ProgressHUD.h"; sourceTree = "<group>"; };
 		D519B04B1DBB0F30002CBC8D /* UIViewController+ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ProgressHUD.m"; sourceTree = "<group>"; };
 		D519B04D1DBB102F002CBC8D /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
@@ -106,8 +103,6 @@
 				D519B0351DBAB51B002CBC8D /* LaunchScreen.storyboard */,
 				D519B0381DBAB51B002CBC8D /* Info.plist */,
 				D519B0271DBAB51B002CBC8D /* Supporting Files */,
-				D519B0461DBB0B70002CBC8D /* MovieDetailsViewController.h */,
-				D519B0471DBB0B70002CBC8D /* MovieDetailsViewController.m */,
 			);
 			path = OMDB_Client;
 			sourceTree = "<group>";
@@ -251,7 +246,6 @@
 				D519B0521DBB11A0002CBC8D /* MBProgressHUD.m in Sources */,
 				D519B0411DBAC18B002CBC8D /* Movie.m in Sources */,
 				D519B04F1DBB102F002CBC8D /* UIImage+animatedGIF.m in Sources */,
-				D519B0481DBB0B70002CBC8D /* MovieDetailsViewController.m in Sources */,
 				D519B0291DBAB51B002CBC8D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

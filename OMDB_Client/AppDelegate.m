@@ -18,10 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
-	[UINavigationBar appearance].barTintColor=[UIColor lightGrayColor];
-		
-	[UITextField appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]].backgroundColor=UIColorFromRGB(0xc9c9ca);
-	[NSThread sleepForTimeInterval:2.0];
+	  [UINavigationBar appearance].barTintColor=[UIColor lightGrayColor];
+	
+	if ([[[UIDevice currentDevice] systemVersion] floatValue] > 9.0)
+	   [UITextField appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]].backgroundColor=UIColorFromRGB(0xc9c9ca);
+	
+	[NSThread sleepForTimeInterval:1.5];
 	
 	[application setStatusBarHidden:NO withAnimation:NO];
 	

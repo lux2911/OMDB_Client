@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "Movie.h"
 #import "MovieCell.h"
-#import "MovieDetailsViewController.h"
 #import "UIViewController+ProgressHUD.h"
 #import "OMDB_Client-Swift.h"
 
@@ -138,6 +137,8 @@
 		[self loadDataForText:searchBar.text andPage:1];
 	}
 }
+
+#pragma mark -
 
 -(void)loadDataForText:(NSString*)text andPage:(unsigned int)page
 {

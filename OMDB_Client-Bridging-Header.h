@@ -3,3 +3,4 @@
 //
 
 #import "UIViewController+ProgressHUD.h"
+#import "Movie.h"

@@ -224,9 +224,10 @@
 		 NSIndexPath* idx = self.tableView.indexPathForSelectedRow;
 		 
 		 Movie* aMovie = self.movies[idx.row];
+		 md.movie = aMovie;
 		 
-		 md.imdbID=aMovie.imdbID;
-		 md.movieTitle=aMovie.Title;
+		 //md.imdbID=aMovie.imdbID;
+		// md.movieTitle=aMovie.Title;
 		
 		 MovieCell* aCell=(MovieCell*)[self.tableView cellForRowAtIndexPath:idx];
 		 

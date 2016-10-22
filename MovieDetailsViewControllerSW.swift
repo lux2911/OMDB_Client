@@ -21,9 +21,10 @@ import UIKit
 	@IBOutlet weak var lblWriters: UILabel!
 	@IBOutlet weak var lblStars: UILabel!
 	
+	var movie : Movie!
 	
-	var imdbID : String!
-	var movieTitle : String!
+	//var imdbID : String!
+	//var movieTitle : String!
 	var movieImg : UIImage!
 	
 	let urlSession : URLSession = URLSession.init(configuration: URLSessionConfiguration.default)
@@ -36,7 +37,7 @@ import UIKit
 		
 		imgMovie.image=movieImg
 		
-		self.lblTitle.text=movieTitle
+		self.lblTitle.text=movie.title + " (" + movie.year + ")"
 		
 		
 		self.loadMovieData()
@@ -49,7 +50,7 @@ import UIKit
 		
 		self.showSpinnerInWindow()
 		
-		let url = URL.init(string: String.init(format: baseURL, imdbID))
+		let url = URL.init(string: String.init(format: baseURL, movie.imdbID))
 		
 		let dataTask = self.urlSession.dataTask(with: url!) { (Data, URLResponse, Error) in
 			
@@ -105,7 +106,7 @@ import UIKit
 	
 	func refreshMovieUI(details : MovieDetails)
 	{
-		self.lblTitle.text=details.Title + " (" + details.Year + ")"
+		
 		self.lblDirector.text=details.Director
 		self.lblWriters.text=details.Writer
 		self.lblStars.text=details.Actors

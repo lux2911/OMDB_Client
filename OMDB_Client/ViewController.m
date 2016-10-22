@@ -7,23 +7,205 @@
 //
 
 #import "ViewController.h"
+#import "Movie.h"
+#import "MovieCell.h"
+#import "MovieDetailsViewController.h"
+#import "UIViewController+ProgressHUD.h"
+#import "OMDB_Client-Swift.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic,strong) NSMutableArray* movies;
+@property (nonatomic,strong) NSURLSession* urlSession;
+@property (nonatomic,strong) NSURLSessionDataTask* dataTask;
+@property (nonatomic,assign) int totalResults;
+@property (nonatomic,strong) NSString* searchText;
 
 @end
 
 @implementation ViewController
 
+#define kBaseURL @"http://www.omdbapi.com/?s=%@&type=movie&page=%d"
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+	self.searchBar.delegate=self;
+	self.navigationItem.titleView = self.searchBar;
+	self.urlSession= [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+	self.movies=[NSMutableArray array];
+	
+	self.tableView.delegate=self;
+	self.tableView.dataSource=self;
+	
+	self.tableView.rowHeight=70;
+	self.tableView.tableHeaderView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10)];
+	self.tableView.tableFooterView=[UIView new];
+	
 }
 
 
-- (void)didReceiveMemoryWarning {
-	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+	return 1;
 }
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	return  [self.movies count];
+}
+
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	static NSString* cellName=@"MovieCell";
+	
+	MovieCell* aCell=[self.tableView dequeueReusableCellWithIdentifier:cellName];
+	
+	if (!aCell)
+	{
+		aCell=[[MovieCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellName];
+		
+	}
+	
+	Movie* aMovie=self.movies[indexPath.row];
+	
+	aCell.lblTitle.text=aMovie.Title;
+	aCell.lblYear.text=aMovie.Year;
+	aCell.poster=aMovie.Poster;
+	
+	aCell.movieID=aMovie.imdbID; // calls setter that will get image
+	
+	
+	NSInteger cnt=[self.tableView numberOfRowsInSection:0];
+		
+	
+	if (indexPath.row==[self.movies count]-1 && cnt<self.totalResults && !self.dataTask)
+	{
+		int aPage=(int)(cnt/10)+1;
+		[self loadDataForText:self.searchText andPage:aPage];
+	}
+	
+		
+	return  aCell;
+}
+
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+	[searchBar resignFirstResponder];
+	
+	if ([searchBar.text length]>0)
+	{
+		[self.movies removeAllObjects];
+		self.totalResults=0;
+		[self.tableView reloadData];
+		
+		self.searchText=searchBar.text;
+		[self loadDataForText:searchBar.text andPage:1];
+	}
+}
+
+-(void)loadDataForText:(NSString*)text andPage:(unsigned int)page
+{
+	
+	if (self.dataTask)
+		[self.dataTask cancel];
+	
+	[self showSpinnerInWindow];
+	
+	
+	NSURL* aURL=[NSURL URLWithString:[NSString stringWithFormat:kBaseURL,text,page]];
+	
+    self.dataTask=[self.urlSession dataTaskWithURL:aURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+		
+		self.dataTask=nil;
+		
+		if (!error)
+		{
+			NSError * jsonErr;
+			NSDictionary* dict=	[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonErr];
+			
+			 if (!jsonErr)
+			 {
+				 self.totalResults=[dict[@"totalResults"] intValue];
+				 
+				 NSArray* arr = dict[@"Search"];
+				 
+				 for (NSDictionary* aMovie in arr) {
+					 
+					 Movie* newMovie=[Movie new];
+					 
+					 for (NSString* aKey in aMovie)
+					 {						 
+						 if ([newMovie respondsToSelector:NSSelectorFromString(aKey)])
+							 [newMovie setValue:aMovie[aKey] forKey:aKey];
+					 }
+					 
+					 [self.movies addObject:newMovie];
+					 
+				 }
+				 
+				 dispatch_async(dispatch_get_main_queue(), ^{
+					 [self dismissHUDAnimated:YES];
+					 [self.tableView reloadData];
+				 });
+				 
+			 }
+			else
+			{
+				dispatch_async(dispatch_get_main_queue(), ^{
+					[self dismissHUDAnimated:YES];
+					
+				});
+			}
+			
+		}
+		else
+		{
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[self dismissHUDAnimated:YES];
+				
+			});
+		}
+
+		
+	}];
+	
+	[self.dataTask resume];
+	
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	 if ([segue.identifier isEqualToString:@"MovieDetails"])
+	 {
+		// MovieDetailsViewController* md=(MovieDetailsViewController*) segue.destinationViewController;
+		 
+		 MovieDetailsViewControllerSW* md=(MovieDetailsViewControllerSW*) segue.destinationViewController;
+		 
+		 NSIndexPath* idx = self.tableView.indexPathForSelectedRow;
+		 
+		 Movie* aMovie = self.movies[idx.row];
+		 
+		 md.imdbID=aMovie.imdbID;
+		 md.movieTitle=aMovie.Title;
+		
+		 MovieCell* aCell=(MovieCell*)[self.tableView cellForRowAtIndexPath:idx];
+		 
+		 md.movieImg=aCell.imgMovie.image;
+		
+	 }
+}
+
 
 
 @end

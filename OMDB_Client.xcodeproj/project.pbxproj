@@ -13,6 +13,16 @@
 		D519B0321DBAB51B002CBC8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D519B0301DBAB51B002CBC8D /* Main.storyboard */; };
 		D519B0341DBAB51B002CBC8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D519B0331DBAB51B002CBC8D /* Assets.xcassets */; };
 		D519B0371DBAB51B002CBC8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D519B0351DBAB51B002CBC8D /* LaunchScreen.storyboard */; };
+		D519B0411DBAC18B002CBC8D /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B0401DBAC18B002CBC8D /* Movie.m */; };
+		D519B0451DBAEB63002CBC8D /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B0441DBAEB63002CBC8D /* MovieCell.m */; };
+		D519B0481DBB0B70002CBC8D /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B0471DBB0B70002CBC8D /* MovieDetailsViewController.m */; };
+		D519B04C1DBB0F30002CBC8D /* UIViewController+ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B04B1DBB0F30002CBC8D /* UIViewController+ProgressHUD.m */; };
+		D519B04F1DBB102F002CBC8D /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B04E1DBB102F002CBC8D /* UIImage+animatedGIF.m */; };
+		D519B0521DBB11A0002CBC8D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B0511DBB11A0002CBC8D /* MBProgressHUD.m */; };
+		D519B0551DBB12FA002CBC8D /* balls.gif in Resources */ = {isa = PBXBuildFile; fileRef = D519B0541DBB12FA002CBC8D /* balls.gif */; };
+		D519B0581DBB629A002CBC8D /* MovieDetailsViewControllerSW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519B0571DBB629A002CBC8D /* MovieDetailsViewControllerSW.swift */; };
+		D519B05A1DBB65E8002CBC8D /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519B0591DBB65E8002CBC8D /* MovieDetails.swift */; };
+		D519B05C1DBBAC84002CBC8D /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D519B05B1DBBAC84002CBC8D /* placeholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +36,23 @@
 		D519B0331DBAB51B002CBC8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D519B0361DBAB51B002CBC8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D519B0381DBAB51B002CBC8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D519B03F1DBAC18B002CBC8D /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		D519B0401DBAC18B002CBC8D /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		D519B0431DBAEB63002CBC8D /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
+		D519B0441DBAEB63002CBC8D /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		D519B0461DBB0B70002CBC8D /* MovieDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailsViewController.h; sourceTree = "<group>"; };
+		D519B0471DBB0B70002CBC8D /* MovieDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
+		D519B04A1DBB0F30002CBC8D /* UIViewController+ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ProgressHUD.h"; sourceTree = "<group>"; };
+		D519B04B1DBB0F30002CBC8D /* UIViewController+ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ProgressHUD.m"; sourceTree = "<group>"; };
+		D519B04D1DBB102F002CBC8D /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		D519B04E1DBB102F002CBC8D /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		D519B0501DBB11A0002CBC8D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		D519B0511DBB11A0002CBC8D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		D519B0541DBB12FA002CBC8D /* balls.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = balls.gif; sourceTree = "<group>"; };
+		D519B0561DBB629A002CBC8D /* OMDB_Client-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OMDB_Client-Bridging-Header.h"; sourceTree = "<group>"; };
+		D519B0571DBB629A002CBC8D /* MovieDetailsViewControllerSW.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieDetailsViewControllerSW.swift; path = ../MovieDetailsViewControllerSW.swift; sourceTree = "<group>"; };
+		D519B0591DBB65E8002CBC8D /* MovieDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		D519B05B1DBBAC84002CBC8D /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +71,7 @@
 			children = (
 				D519B0261DBAB51B002CBC8D /* OMDB_Client */,
 				D519B0251DBAB51B002CBC8D /* Products */,
+				D519B0561DBB629A002CBC8D /* OMDB_Client-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,15 +86,22 @@
 		D519B0261DBAB51B002CBC8D /* OMDB_Client */ = {
 			isa = PBXGroup;
 			children = (
+				D519B0531DBB12FA002CBC8D /* Resources */,
+				D519B0491DBB0F30002CBC8D /* Categories */,
+				D519B0421DBAEB3D002CBC8D /* Cells */,
+				D519B03E1DBAC170002CBC8D /* Models */,
 				D519B02A1DBAB51B002CBC8D /* AppDelegate.h */,
 				D519B02B1DBAB51B002CBC8D /* AppDelegate.m */,
 				D519B02D1DBAB51B002CBC8D /* ViewController.h */,
 				D519B02E1DBAB51B002CBC8D /* ViewController.m */,
+				D519B0571DBB629A002CBC8D /* MovieDetailsViewControllerSW.swift */,
 				D519B0301DBAB51B002CBC8D /* Main.storyboard */,
 				D519B0331DBAB51B002CBC8D /* Assets.xcassets */,
 				D519B0351DBAB51B002CBC8D /* LaunchScreen.storyboard */,
 				D519B0381DBAB51B002CBC8D /* Info.plist */,
 				D519B0271DBAB51B002CBC8D /* Supporting Files */,
+				D519B0461DBB0B70002CBC8D /* MovieDetailsViewController.h */,
+				D519B0471DBB0B70002CBC8D /* MovieDetailsViewController.m */,
 			);
 			path = OMDB_Client;
 			sourceTree = "<group>";
@@ -77,6 +112,47 @@
 				D519B0281DBAB51B002CBC8D /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D519B03E1DBAC170002CBC8D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D519B03F1DBAC18B002CBC8D /* Movie.h */,
+				D519B0401DBAC18B002CBC8D /* Movie.m */,
+				D519B0591DBB65E8002CBC8D /* MovieDetails.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D519B0421DBAEB3D002CBC8D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D519B0431DBAEB63002CBC8D /* MovieCell.h */,
+				D519B0441DBAEB63002CBC8D /* MovieCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D519B0491DBB0F30002CBC8D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D519B0501DBB11A0002CBC8D /* MBProgressHUD.h */,
+				D519B0511DBB11A0002CBC8D /* MBProgressHUD.m */,
+				D519B04D1DBB102F002CBC8D /* UIImage+animatedGIF.h */,
+				D519B04E1DBB102F002CBC8D /* UIImage+animatedGIF.m */,
+				D519B04A1DBB0F30002CBC8D /* UIViewController+ProgressHUD.h */,
+				D519B04B1DBB0F30002CBC8D /* UIViewController+ProgressHUD.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		D519B0531DBB12FA002CBC8D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D519B05B1DBBAC84002CBC8D /* placeholder.png */,
+				D519B0541DBB12FA002CBC8D /* balls.gif */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +186,7 @@
 				TargetAttributes = {
 					D519B0231DBAB51B002CBC8D = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -140,6 +217,8 @@
 				D519B0371DBAB51B002CBC8D /* LaunchScreen.storyboard in Resources */,
 				D519B0341DBAB51B002CBC8D /* Assets.xcassets in Resources */,
 				D519B0321DBAB51B002CBC8D /* Main.storyboard in Resources */,
+				D519B05C1DBBAC84002CBC8D /* placeholder.png in Resources */,
+				D519B0551DBB12FA002CBC8D /* balls.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +230,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D519B02F1DBAB51B002CBC8D /* ViewController.m in Sources */,
+				D519B0451DBAEB63002CBC8D /* MovieCell.m in Sources */,
+				D519B0581DBB629A002CBC8D /* MovieDetailsViewControllerSW.swift in Sources */,
 				D519B02C1DBAB51B002CBC8D /* AppDelegate.m in Sources */,
+				D519B04C1DBB0F30002CBC8D /* UIViewController+ProgressHUD.m in Sources */,
+				D519B05A1DBB65E8002CBC8D /* MovieDetails.swift in Sources */,
+				D519B0521DBB11A0002CBC8D /* MBProgressHUD.m in Sources */,
+				D519B0411DBAC18B002CBC8D /* Movie.m in Sources */,
+				D519B04F1DBB102F002CBC8D /* UIImage+animatedGIF.m in Sources */,
+				D519B0481DBB0B70002CBC8D /* MovieDetailsViewController.m in Sources */,
 				D519B0291DBAB51B002CBC8D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,10 +359,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = OMDB_Client/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lux.OMDB-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OMDB_Client-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -283,10 +375,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = OMDB_Client/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lux.OMDB-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OMDB_Client-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

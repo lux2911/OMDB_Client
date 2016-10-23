@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -252,11 +253,11 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="3gY-m4-0ug" secondAttribute="bottom" id="83V-x3-Kp3"/>
+                                    <constraint firstAttribute="bottom" secondItem="3gY-m4-0ug" secondAttribute="bottom" id="C1z-ro-YMg"/>
                                     <constraint firstItem="3gY-m4-0ug" firstAttribute="top" secondItem="JGU-87-ow3" secondAttribute="top" id="cpe-ZQ-lL2"/>
                                     <constraint firstItem="3gY-m4-0ug" firstAttribute="leading" secondItem="JGU-87-ow3" secondAttribute="leading" id="dgp-WA-M4z"/>
                                     <constraint firstAttribute="trailing" secondItem="3gY-m4-0ug" secondAttribute="trailing" id="k66-Qr-7PE"/>
-                                    <constraint firstItem="3gY-m4-0ug" firstAttribute="height" secondItem="JGU-87-ow3" secondAttribute="height" id="lom-1a-PxL"/>
+                                    <constraint firstItem="3gY-m4-0ug" firstAttribute="height" secondItem="JGU-87-ow3" secondAttribute="height" multiplier="1.5" id="lom-1a-PxL"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -270,12 +271,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="3gY-m4-0ug" id="MDu-LN-cfr"/>
                         <outlet property="imgMovie" destination="Hju-sy-Y8N" id="Fyk-qa-rQ6"/>
                         <outlet property="lblDirector" destination="2Gg-2G-0Bn" id="iCx-V0-sdf"/>
                         <outlet property="lblInfo" destination="LSc-Af-PLW" id="3Dc-qV-TVU"/>
                         <outlet property="lblStars" destination="nKv-sK-G8E" id="MJ4-Bv-sUJ"/>
                         <outlet property="lblTitle" destination="B1b-Ru-V6v" id="dme-XE-rmK"/>
                         <outlet property="lblWriters" destination="wFb-IC-xZu" id="F1f-Qc-AkS"/>
+                        <outlet property="scrollView" destination="JGU-87-ow3" id="VAU-96-g0G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0R-tm-bMx" userLabel="First Responder" sceneMemberID="firstResponder"/>

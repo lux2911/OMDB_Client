@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OMDB_Client/ViewController.m"
-            timestampString = "498936377.797646"
+            filePath = "MovieDetailsViewControllerSW.swift"
+            timestampString = "498937626.748802"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
-            landmarkName = "-loadDataForText:andPage:"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "loadMovieData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

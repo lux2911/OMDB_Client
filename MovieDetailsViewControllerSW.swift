@@ -94,6 +94,7 @@ import UIKit
 				{
 					DispatchQueue.main.async {
 						self.dismissHUD(animated: true)
+						self.showError(error: error)
 					}
 				}
 				
@@ -103,6 +104,7 @@ import UIKit
 			{
 				DispatchQueue.main.async {
 					self.dismissHUD(animated: true)
+					self.showError(error: Error!)
 				}
 			}
 			
@@ -112,6 +114,18 @@ import UIKit
 		
 	}
 	
+	
+	func showError(error : Error)
+	{
+		let ac = UIAlertController.init(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+		let alert = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+		
+		ac.addAction(alert)
+		
+		self.present(ac, animated: true, completion: nil)
+		
+		
+	}
 	
 	
 	func refreshMovieUI(details : MovieDetails)

@@ -201,6 +201,7 @@
 		{
 			dispatch_async(dispatch_get_main_queue(), ^{
 				[self dismissHUDAnimated:YES];
+				[self showError:error];
 				self.tableView.tableFooterView=[self tableFooter];
 				
 			});
@@ -211,6 +212,19 @@
 	
 	[self.dataTask resume];
 	
+}
+
+
+-(void)showError:(NSError*)error
+{
+	UIAlertController* ac=[UIAlertController alertControllerWithTitle:@"Error" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+	
+	UIAlertAction* action=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+												 handler:nil];
+	
+	[ac addAction:action];
+	
+	[self presentViewController:ac animated:YES completion:nil];
 }
 
 

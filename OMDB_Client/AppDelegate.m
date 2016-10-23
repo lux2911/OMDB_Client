@@ -19,6 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
 	  [UINavigationBar appearance].barTintColor=[UIColor lightGrayColor];
+	  [[UINavigationBar appearance] setTintColor:[UIColor darkGrayColor]];
 	
 	if ([[[UIDevice currentDevice] systemVersion] floatValue] > 9.0)
 	   [UITextField appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]].backgroundColor=UIColorFromRGB(0xc9c9ca);

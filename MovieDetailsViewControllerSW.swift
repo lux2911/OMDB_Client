@@ -21,6 +21,8 @@ import UIKit
 	@IBOutlet weak var lblWriters: UILabel!
 	@IBOutlet weak var lblStars: UILabel!
 	
+	
+	
 	var movie : Movie!
 	var movieImg : UIImage!
 	
@@ -39,6 +41,17 @@ import UIKit
 		
 		self.loadMovieData()
 		
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		
+		if (segue.identifier == "ShowImdb")
+		{
+			let vc = segue.destination as! ImdbViewController
+			
+			vc.imdbID = movie.imdbID
+			
+		}
 	}
 
 	

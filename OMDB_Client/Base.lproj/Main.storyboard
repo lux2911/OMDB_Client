@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3mQ-3f-LpX" id="fLC-OD-2tg">
-                                            <frame key="frameInset" width="375" height="69.5"/>
+                                            <frame key="frameInset" width="375" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fpa-Of-Kag">
@@ -124,11 +124,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hju-sy-Y8N">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hju-sy-Y8N">
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="217" id="erU-En-VbO"/>
                                     <constraint firstAttribute="height" constant="231" id="h3H-mp-15b"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="F5H-tx-wdM" appends="YES" id="Xsa-JX-MLE"/>
+                                </connections>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhl-ZS-bS0">
                                 <subviews>
@@ -248,8 +252,30 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0R-tm-bMx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="F5H-tx-wdM">
+                    <connections>
+                        <segue destination="N5u-I8-zWB" kind="show" identifier="ShowImdb" id="OLR-bj-Zpv"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1940" y="347.67616191904051"/>
+        </scene>
+        <!--Imdb View Controller-->
+        <scene sceneID="1Wu-P3-ZMx">
+            <objects>
+                <viewController id="N5u-I8-zWB" customClass="ImdbViewController" customModule="OMDB_Client" customModuleProvider="target" sceneMemberID="viewController">
+                    <webView key="view" opaque="NO" contentMode="scaleToFill" id="XFU-Qs-kTz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </webView>
+                    <connections>
+                        <outlet property="webView" destination="XFU-Qs-kTz" id="69k-3K-CL5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lRK-pk-i4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2775" y="348"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XE1-EY-8hk">

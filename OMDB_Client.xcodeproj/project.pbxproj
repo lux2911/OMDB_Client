@@ -25,6 +25,7 @@
 		D519B0581DBB629A002CBC8D /* MovieDetailsViewControllerSW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519B0571DBB629A002CBC8D /* MovieDetailsViewControllerSW.swift */; };
 		D519B05A1DBB65E8002CBC8D /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519B0591DBB65E8002CBC8D /* MovieDetails.swift */; };
 		D519B05C1DBBAC84002CBC8D /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D519B05B1DBBAC84002CBC8D /* placeholder.png */; };
+		D5BBA1801DBCA36D00C438FA /* ImdbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BBA17F1DBCA36D00C438FA /* ImdbViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		D519B0571DBB629A002CBC8D /* MovieDetailsViewControllerSW.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieDetailsViewControllerSW.swift; path = ../MovieDetailsViewControllerSW.swift; sourceTree = "<group>"; };
 		D519B0591DBB65E8002CBC8D /* MovieDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		D519B05B1DBBAC84002CBC8D /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		D5BBA17F1DBCA36D00C438FA /* ImdbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImdbViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				D519B02D1DBAB51B002CBC8D /* ViewController.h */,
 				D519B02E1DBAB51B002CBC8D /* ViewController.m */,
 				D519B0571DBB629A002CBC8D /* MovieDetailsViewControllerSW.swift */,
+				D5BBA17F1DBCA36D00C438FA /* ImdbViewController.swift */,
 				D519B0301DBAB51B002CBC8D /* Main.storyboard */,
 				D519B0331DBAB51B002CBC8D /* Assets.xcassets */,
 				D519B0351DBAB51B002CBC8D /* LaunchScreen.storyboard */,
@@ -244,6 +247,7 @@
 				D519B04C1DBB0F30002CBC8D /* UIViewController+ProgressHUD.m in Sources */,
 				D519B05A1DBB65E8002CBC8D /* MovieDetails.swift in Sources */,
 				D519B0521DBB11A0002CBC8D /* MBProgressHUD.m in Sources */,
+				D5BBA1801DBCA36D00C438FA /* ImdbViewController.swift in Sources */,
 				D519B0411DBAC18B002CBC8D /* Movie.m in Sources */,
 				D519B04F1DBB102F002CBC8D /* UIImage+animatedGIF.m in Sources */,
 				D519B0291DBAB51B002CBC8D /* main.m in Sources */,

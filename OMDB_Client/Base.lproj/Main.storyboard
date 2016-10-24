@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -221,24 +220,36 @@
                                                     <outletCollection property="gestureRecognizers" destination="F5H-tx-wdM" appends="YES" id="Xsa-JX-MLE"/>
                                                 </connections>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9f-kM-4GY">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="dBq-4J-Oax"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="wFb-IC-xZu" firstAttribute="leading" secondItem="shU-BN-SYV" secondAttribute="trailing" constant="9" id="6rV-dC-fLc"/>
+                                            <constraint firstItem="m9f-kM-4GY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nKv-sK-G8E" secondAttribute="bottom" constant="22" id="6vb-kz-4Xo"/>
                                             <constraint firstAttribute="trailing" secondItem="Hju-sy-Y8N" secondAttribute="trailing" constant="79" id="9aO-J9-tA4"/>
                                             <constraint firstItem="2Gg-2G-0Bn" firstAttribute="top" secondItem="zhl-ZS-bS0" secondAttribute="bottom" constant="18" id="Bkh-3z-M0V"/>
                                             <constraint firstAttribute="trailing" secondItem="zhl-ZS-bS0" secondAttribute="trailing" constant="8" id="DJi-VY-JDT"/>
                                             <constraint firstAttribute="trailing" secondItem="2Gg-2G-0Bn" secondAttribute="trailing" constant="8" id="Duh-Uj-wIz"/>
                                             <constraint firstItem="nKv-sK-G8E" firstAttribute="top" secondItem="E42-VH-vqx" secondAttribute="top" id="HvE-Rs-WKJ"/>
                                             <constraint firstItem="E42-VH-vqx" firstAttribute="leading" secondItem="3gY-m4-0ug" secondAttribute="leading" constant="8" id="KnS-bz-pfe"/>
+                                            <constraint firstItem="m9f-kM-4GY" firstAttribute="leading" secondItem="3gY-m4-0ug" secondAttribute="leading" constant="185" id="OQt-bI-y6b"/>
                                             <constraint firstItem="shU-BN-SYV" firstAttribute="top" secondItem="5Ba-f3-wWg" secondAttribute="bottom" constant="11" id="Pqg-E4-7xC"/>
                                             <constraint firstItem="Hju-sy-Y8N" firstAttribute="top" secondItem="B1b-Ru-V6v" secondAttribute="bottom" constant="8" id="SQc-jo-raH"/>
                                             <constraint firstItem="wFb-IC-xZu" firstAttribute="top" secondItem="2Gg-2G-0Bn" secondAttribute="bottom" constant="12" id="Vgh-Jw-Bmk"/>
                                             <constraint firstItem="2Gg-2G-0Bn" firstAttribute="leading" secondItem="5Ba-f3-wWg" secondAttribute="trailing" id="aef-2G-N0A"/>
                                             <constraint firstItem="zhl-ZS-bS0" firstAttribute="leading" secondItem="3gY-m4-0ug" secondAttribute="leading" constant="8" id="dqH-FR-jHD"/>
+                                            <constraint firstAttribute="bottom" secondItem="m9f-kM-4GY" secondAttribute="bottom" constant="8" id="gt8-wz-tK7"/>
                                             <constraint firstAttribute="trailing" secondItem="wFb-IC-xZu" secondAttribute="trailing" constant="8" id="hFq-ck-yYA"/>
                                             <constraint firstAttribute="trailing" secondItem="nKv-sK-G8E" secondAttribute="trailing" constant="8" id="jV8-lw-Uj3"/>
                                             <constraint firstItem="5Ba-f3-wWg" firstAttribute="top" secondItem="zhl-ZS-bS0" secondAttribute="bottom" constant="18" id="jmZ-Cb-dgB"/>
+                                            <constraint firstAttribute="trailing" secondItem="m9f-kM-4GY" secondAttribute="trailing" constant="148" id="k0G-2q-z7S"/>
                                             <constraint firstItem="nKv-sK-G8E" firstAttribute="top" secondItem="wFb-IC-xZu" secondAttribute="bottom" constant="11" id="kIl-JG-YGx"/>
                                             <constraint firstItem="nKv-sK-G8E" firstAttribute="leading" secondItem="E42-VH-vqx" secondAttribute="trailing" constant="24" id="oRh-ht-eem"/>
                                             <constraint firstAttribute="trailing" secondItem="B1b-Ru-V6v" secondAttribute="trailing" constant="8" id="pYZ-Z1-kKt"/>
@@ -257,7 +268,7 @@
                                     <constraint firstItem="3gY-m4-0ug" firstAttribute="top" secondItem="JGU-87-ow3" secondAttribute="top" id="cpe-ZQ-lL2"/>
                                     <constraint firstItem="3gY-m4-0ug" firstAttribute="leading" secondItem="JGU-87-ow3" secondAttribute="leading" id="dgp-WA-M4z"/>
                                     <constraint firstAttribute="trailing" secondItem="3gY-m4-0ug" secondAttribute="trailing" id="k66-Qr-7PE"/>
-                                    <constraint firstItem="3gY-m4-0ug" firstAttribute="height" secondItem="JGU-87-ow3" secondAttribute="height" multiplier="1.5" id="lom-1a-PxL"/>
+                                    <constraint firstItem="3gY-m4-0ug" firstAttribute="height" secondItem="JGU-87-ow3" secondAttribute="height" priority="250" id="lom-1a-PxL"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

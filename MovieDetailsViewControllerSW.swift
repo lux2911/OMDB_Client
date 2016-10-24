@@ -24,6 +24,7 @@ import UIKit
 	@IBOutlet weak var scrollView: UIScrollView!
 	@IBOutlet weak var containerView: UIView!
 	
+	@IBOutlet weak var lblPlot: UILabel!
 	
 	var movie : Movie!
 	var movieImg : UIImage!
@@ -141,6 +142,8 @@ import UIKit
 		
 		self.lblInfo.text=details.Rated + " | " + details.Runtime+" | " + details.Genre + " | " + details.Released +
 		" (" + details.Country + ")"
+		
+		self.lblPlot.text = details.Plot
 		
 	}
 	

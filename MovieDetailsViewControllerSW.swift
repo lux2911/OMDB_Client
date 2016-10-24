@@ -43,26 +43,9 @@ import UIKit
 		
 		self.loadMovieData()
 		
-		self.scrollView.frame = self.containerView.frame
-		
-		//self.scrollView.contentSize =
-		
-		
-		
+				
 	}
 	
-	override func viewDidLayoutSubviews() {
-		
-		super.viewDidLayoutSubviews()
-		
-		/*var size = self.containerView.frame.size
-		
-		size.height += 200
-		
-		
-		
-		self.scrollView.contentSize = size*/
-	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		

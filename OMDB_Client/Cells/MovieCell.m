@@ -35,6 +35,8 @@
   if (![self.poster isEqualToString:@"N/A"])
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 		
+	   @synchronized (self)
+		{
 		NSString* aID=self.movieID;
 		
 		NSURLRequest* request=[NSURLRequest requestWithURL:[NSURL URLWithString:self.poster]];
@@ -51,11 +53,11 @@
 		{
 			dispatch_async(dispatch_get_main_queue(), ^{
 				
-				if ([aID isEqualToString:self.movieID])
+				if (aImage && [aID isEqualToString:self.movieID])
 				 self.imgMovie.image=aImage;
 			});
 		}
-		
+		}
 		
 	});
 	

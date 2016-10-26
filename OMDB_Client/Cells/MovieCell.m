@@ -10,20 +10,32 @@
 
 @implementation MovieCell
 
+@synthesize movieID;
+
 - (void)awakeFromNib {
     [super awakeFromNib];
 	
 	self.imgMovie.image=[UIImage imageNamed:@"placeholder"];
 }
 
--(void)setMovieID:(NSString *)movieID
+-(NSString *)movieID
 {
-	_movieID=movieID;
+	@synchronized (self) {
+		return movieID;
+	}
+}
+
+-(void)setMovieID:(NSString *)aMovieID
+{
+	@synchronized (self) {
+		movieID=aMovieID;
+	}
+	
 	
   if (![self.poster isEqualToString:@"N/A"])
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 		
-		NSString* aID=movieID;
+		NSString* aID=self.movieID;
 		
 		NSURLRequest* request=[NSURLRequest requestWithURL:[NSURL URLWithString:self.poster]];
 		
@@ -35,10 +47,12 @@
 		else
 			aImage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.poster]]];
 		
-		if ([aID isEqualToString:movieID])
+		if ([aID isEqualToString:self.movieID])
 		{
 			dispatch_async(dispatch_get_main_queue(), ^{
-				self.imgMovie.image=aImage;
+				
+				if ([aID isEqualToString:self.movieID])
+				 self.imgMovie.image=aImage;
 			});
 		}
 		

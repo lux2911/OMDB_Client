@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lblYear;
 
-@property (nonatomic,strong) NSString* movieID;
+@property (atomic,strong) NSString* movieID;
 @property (nonatomic,strong) NSString* poster;
 
 @end

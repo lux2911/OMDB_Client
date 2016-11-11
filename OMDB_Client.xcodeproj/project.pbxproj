@@ -10,6 +10,8 @@
 		D50D68811DBBF75E00D50528 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D50D687E1DBBF75E00D50528 /* background.png */; };
 		D50D68821DBBF75E00D50528 /* popcorn.png in Resources */ = {isa = PBXBuildFile; fileRef = D50D687F1DBBF75E00D50528 /* popcorn.png */; };
 		D50D68831DBBF75E00D50528 /* tour_search.png in Resources */ = {isa = PBXBuildFile; fileRef = D50D68801DBBF75E00D50528 /* tour_search.png */; };
+		D5109A031DD3C69B001F5B0B /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = D5109A021DD3C69B001F5B0B /* JRSwizzle.m */; };
+		D5109A061DD3D440001F5B0B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5109A051DD3D440001F5B0B /* JavaScriptCore.framework */; };
 		D519B0291DBAB51B002CBC8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B0281DBAB51B002CBC8D /* main.m */; };
 		D519B02C1DBAB51B002CBC8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B02B1DBAB51B002CBC8D /* AppDelegate.m */; };
 		D519B02F1DBAB51B002CBC8D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D519B02E1DBAB51B002CBC8D /* ViewController.m */; };
@@ -32,6 +34,9 @@
 		D50D687E1DBBF75E00D50528 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		D50D687F1DBBF75E00D50528 /* popcorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popcorn.png; sourceTree = "<group>"; };
 		D50D68801DBBF75E00D50528 /* tour_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tour_search.png; sourceTree = "<group>"; };
+		D5109A011DD3C69B001F5B0B /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
+		D5109A021DD3C69B001F5B0B /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
+		D5109A051DD3D440001F5B0B /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		D519B0241DBAB51B002CBC8D /* OMDB_Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMDB_Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D519B0281DBAB51B002CBC8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D519B02A1DBAB51B002CBC8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,18 +70,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5109A061DD3D440001F5B0B /* JavaScriptCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D5109A041DD3D440001F5B0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5109A051DD3D440001F5B0B /* JavaScriptCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D519B01B1DBAB51B002CBC8D = {
 			isa = PBXGroup;
 			children = (
 				D519B0261DBAB51B002CBC8D /* OMDB_Client */,
 				D519B0251DBAB51B002CBC8D /* Products */,
 				D519B0561DBB629A002CBC8D /* OMDB_Client-Bridging-Header.h */,
+				D5109A041DD3D440001F5B0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +111,8 @@
 				D519B0421DBAEB3D002CBC8D /* Cells */,
 				D519B03E1DBAC170002CBC8D /* Models */,
 				D519B02A1DBAB51B002CBC8D /* AppDelegate.h */,
+				D5109A011DD3C69B001F5B0B /* JRSwizzle.h */,
+				D5109A021DD3C69B001F5B0B /* JRSwizzle.m */,
 				D519B02B1DBAB51B002CBC8D /* AppDelegate.m */,
 				D519B02D1DBAB51B002CBC8D /* ViewController.h */,
 				D519B02E1DBAB51B002CBC8D /* ViewController.m */,
@@ -193,7 +210,7 @@
 				TargetAttributes = {
 					D519B0231DBAB51B002CBC8D = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = GK8HY9F8K9;
+						DevelopmentTeam = EDNPN88343;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -250,6 +267,7 @@
 				D5BBA1801DBCA36D00C438FA /* ImdbViewController.swift in Sources */,
 				D519B0411DBAC18B002CBC8D /* Movie.m in Sources */,
 				D519B04F1DBB102F002CBC8D /* UIImage+animatedGIF.m in Sources */,
+				D5109A031DD3C69B001F5B0B /* JRSwizzle.m in Sources */,
 				D519B0291DBAB51B002CBC8D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,7 +389,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = GK8HY9F8K9;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = EDNPN88343;
 				INFOPLIST_FILE = OMDB_Client/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -388,7 +407,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = GK8HY9F8K9;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = EDNPN88343;
 				INFOPLIST_FILE = OMDB_Client/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

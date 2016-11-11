@@ -24,9 +24,9 @@
 	if ([[[UIDevice currentDevice] systemVersion] floatValue] > 9.0)
 	   [UITextField appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]].backgroundColor=UIColorFromRGB(0xc9c9ca);
 	
-	[NSThread sleepForTimeInterval:1.5];
 	
-	[application setStatusBarHidden:NO withAnimation:NO];
+	
+	//[application setStatusBarHidden:NO withAnimation:NO];
 	
 	
 	return YES;

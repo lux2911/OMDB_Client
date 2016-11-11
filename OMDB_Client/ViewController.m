@@ -6,11 +6,53 @@
 //  Copyright © 2016 Tomislav Luketic. All rights reserved.
 //
 
+#import <JavaScriptCore/JavaScriptCore.h>
+
 #import "ViewController.h"
 #import "Movie.h"
 #import "MovieCell.h"
 #import "UIViewController+ProgressHUD.h"
 #import "OMDB_Client-Swift.h"
+
+#import "JRSwizzle.h"
+
+/*@protocol SwizzProtocol <JSExport>
+
+-(instancetype)initWithOrigMethod:(SEL)origMethod swizzMethod:(SEL)swizzMethod andClass:(Class)aClass;
+
+@property (nonatomic) SEL origMethod;
+@property (nonatomic) SEL swizzMethod;
+@property (nonatomic) Class swizzClass;
+
+@end
+
+@interface SwizzJS : NSObject<SwizzProtocol>
+
+@property (nonatomic,assign) SEL origMethod;
+@property (nonatomic,assign) SEL swizzMethod;
+@property (nonatomic,strong) Class swizzClass;
+
+@end
+
+@implementation SwizzJS
+
+-(instancetype)initWithOrigMethod:(SEL)origMethod swizzMethod:(SEL)swizzMethod andClass:(Class)aClass
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.origMethod=origMethod;
+        self.swizzMethod=swizzMethod;
+        self.swizzClass=aClass;
+    }
+    
+    return self;
+}
+
+
+@end
+ */
 
 @interface ViewController ()
 
@@ -29,8 +71,96 @@
 
 #define kBaseURL @"http://www.omdbapi.com/?s=%@&type=movie&page=%d"
 
+/*
++(void)load
+{
+    
+    JSContext *context =[JSContext new];
+    
+    SwizzJS* swizz=[SwizzJS new];
+    
+    swizz.swizzClass=NSClassFromString(@"ViewController");
+    swizz.origMethod=NSSelectorFromString(@"tableFooter");
+    swizz.swizzMethod=NSSelectorFromString(@"tableFooter1");
+    
+    [context setExceptionHandler:^(JSContext *context, JSValue *value) {
+        NSLog(@"WEB JS: %@", value);
+    }];
+
+    //context[@"swizz"]=swizz;
+    context[@"ViewController"]=NSClassFromString(@"ViewController");
+    
+    NSString* js=
+     @"var doSwizzle = function(origMethod,swizzMethod){ "
+    "ViewController.test();"
+    " }";
+    
+    [context evaluateScript:js];
+
+    
+    JSValue *jsFunction = context[@"doSwizzle"];
+    JSValue *value = [jsFunction callWithArguments:@[@"1",@"2" ]];
+    
+     
+     // calling a JavaScript function
+     JSValue *jsFunction = context[@"isValidNumber"];
+     JSValue *value = [jsFunction callWithArguments:@[ phone ]];
+     
+    
+    
+    [context evaluateScript:js];
+    
+ 
+}*/
+
+//+(void)load
+//{
+//    JSContext *context =[JSContext new];
+//    
+////    SwizzJS* swizz=[SwizzJS new];
+////    
+////    swizz.swizzClass=NSClassFromString(@"ViewController");
+////    swizz.origMethod=NSSelectorFromString(@"tableFooter");
+////    swizz.swizzMethod=NSSelectorFromString(@"tableFooter1");
+//    
+//    [context setExceptionHandler:^(JSContext *context, JSValue *value) {
+//        NSLog(@"WEB JS: %@", value);
+//    }];
+//    
+//    
+//     context[@"ViewController"]=NSClassFromString(@"ViewController");
+//    
+//    NSString* js=
+//   // @"var doSwizzle = function(origMethod,swizzMethod){ "
+//    //"ViewController.swizzleMethodWithMethod(origMethod,swizzMethod) }";
+//    @"ViewController.test();";
+//    
+//    [context evaluateScript:js];
+//    
+//    //id s = @selector(tableFooter);
+//    
+// //   JSValue *jsFunction = context[@"doSwizzle"];
+//   // JSValue *value = [jsFunction callWithArguments:@[@"1",s ]];
+//    
+//    
+//
+//}
+
++ (BOOL)swizzleMethod:(SEL)origSel_ withMethod:(SEL)altSel_
+{
+    return true;
+}
+
+
+//+(void)test
+//{
+//    
+//}
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    [ViewController test];
+
 	
 	self.searchBar.delegate=self;
 	self.navigationItem.titleView = self.searchBar;
@@ -43,7 +173,8 @@
 	self.tableView.rowHeight=70;
 	self.tableView.tableHeaderView=nil;
 	self.tableView.tableFooterView=[self tableFooter];
-	
+    
+  	
 }
 
 
@@ -66,6 +197,11 @@
 	
 	
 	return aView;
+}
+
+-(UIView*)tableFooter1
+{
+    return [UIView new];
 }
 
 

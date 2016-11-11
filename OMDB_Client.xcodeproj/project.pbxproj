@@ -27,6 +27,7 @@
 		D519B0581DBB629A002CBC8D /* MovieDetailsViewControllerSW.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519B0571DBB629A002CBC8D /* MovieDetailsViewControllerSW.swift */; };
 		D519B05A1DBB65E8002CBC8D /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D519B0591DBB65E8002CBC8D /* MovieDetails.swift */; };
 		D519B05C1DBBAC84002CBC8D /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D519B05B1DBBAC84002CBC8D /* placeholder.png */; };
+		D55EAEC91DD5F8D70077D449 /* huh.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55EAEC81DD5F8D60077D449 /* huh.xib */; };
 		D5BBA1801DBCA36D00C438FA /* ImdbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BBA17F1DBCA36D00C438FA /* ImdbViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		D519B0571DBB629A002CBC8D /* MovieDetailsViewControllerSW.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieDetailsViewControllerSW.swift; path = ../MovieDetailsViewControllerSW.swift; sourceTree = "<group>"; };
 		D519B0591DBB65E8002CBC8D /* MovieDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		D519B05B1DBBAC84002CBC8D /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		D55EAEC81DD5F8D60077D449 /* huh.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = huh.xib; sourceTree = "<group>"; };
 		D5BBA17F1DBCA36D00C438FA /* ImdbViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImdbViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 				D519B0571DBB629A002CBC8D /* MovieDetailsViewControllerSW.swift */,
 				D5BBA17F1DBCA36D00C438FA /* ImdbViewController.swift */,
 				D519B0301DBAB51B002CBC8D /* Main.storyboard */,
+				D55EAEC81DD5F8D60077D449 /* huh.xib */,
 				D519B0331DBAB51B002CBC8D /* Assets.xcassets */,
 				D519B0351DBAB51B002CBC8D /* LaunchScreen.storyboard */,
 				D519B0381DBAB51B002CBC8D /* Info.plist */,
@@ -245,6 +248,7 @@
 				D519B0341DBAB51B002CBC8D /* Assets.xcassets in Resources */,
 				D519B0321DBAB51B002CBC8D /* Main.storyboard in Resources */,
 				D519B05C1DBBAC84002CBC8D /* placeholder.png in Resources */,
+				D55EAEC91DD5F8D70077D449 /* huh.xib in Resources */,
 				D519B0551DBB12FA002CBC8D /* balls.gif in Resources */,
 				D50D68821DBBF75E00D50528 /* popcorn.png in Resources */,
 			);

@@ -27,8 +27,6 @@
 #define GetClass(obj)	(obj ? obj->isa : Nil)
 #endif
 
-@interface NSObject ()<SwizzProtocol>
-@end
 
 @implementation NSObject (JRSwizzle)
 

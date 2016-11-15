@@ -28,7 +28,6 @@
 #endif
 
 @interface NSObject ()<SwizzProtocol>
-+(void)test;
 @end
 
 @implementation NSObject (JRSwizzle)
@@ -150,10 +149,7 @@
     return [GetClass((id)self) jr_swizzleMethod:*origSel_ withMethod:*altSel_ error:&err];
 }
 
-+(void)test
-{
-    
-}
+
 
 
 @end

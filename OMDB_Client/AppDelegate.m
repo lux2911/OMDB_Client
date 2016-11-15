@@ -26,8 +26,6 @@
 	
 	
 	
-	//[application setStatusBarHidden:NO withAnimation:NO];
-	
 	
 	return YES;
 }

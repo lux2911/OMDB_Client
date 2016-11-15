@@ -7,19 +7,6 @@
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "ViewController.h"
 
-/*
-@protocol SwizzProtocol <JSExport>
-
-//-(instancetype)initWithOrigMethod:(SEL)origMethod swizzMethod:(SEL)swizzMethod andClass:(Class)aClass;
-
-+ (BOOL)jr_swizzleMethod:(SEL*)origSel_ withMethod:(SEL*)altSel_;
-
-@property (nonatomic) SEL origMethod;
-@property (nonatomic) SEL swizzMethod;
-@property (nonatomic) Class swizzClass;
-
-@end
-*/
 
 @interface NSObject (JRSwizzle)
 
@@ -27,6 +14,6 @@
 + (BOOL)jr_swizzleClassMethod:(SEL)origSel_ withClassMethod:(SEL)altSel_ error:(NSError**)error_;
 + (BOOL)jr_swizzleMethod:(SEL*)origSel_ withMethod:(SEL*)altSel_;
 
-+(void)test;
+
 
 @end
